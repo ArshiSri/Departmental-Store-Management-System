@@ -1,0 +1,253 @@
+use sys;
+
+Create table promotion(promo_id int Primary Key, 
+promo_name varchar(40), 
+start_date date, 
+end_date date);
+
+insert into promotion values (21075, 'Discounted Products', '2015/02/10', '2015/02/22');
+insert into promotion values (29501, 'Free Shipping/Free Returns', '2018/05/25', '2018/06/02');
+insert into promotion values (26570, 'Flash Sale', '2008/10/22', '2008/10/27');
+insert into promotion values (28802, 'Buy More, Save More', '2019/09/20', '2019/09/25');
+insert into promotion values (22502, 'Product Giveaways/Branded Gifts', '2017/04/20', '2017/04/30');
+insert into promotion values (28645, 'Loyalty Points', '2006/12/15', '2006/12/20');
+insert into promotion values (25589, 'Coupon Giveaway', '2020/11/17', '2020/11/21');
+insert into promotion values (26940, 'Competitions', '2018/04/26', '2018/04/30');
+insert into promotion values (23654, 'Price Match Promise', '2009/08/10', '2009/08/20');
+insert into promotion values (28456, 'Holiday Promotions', '2004/10/15', '2004/10/30');
+insert into promotion values (28260, 'Big Billion Days', '2010/03/14', '2010/03/22');
+insert into promotion values (26977, 'Free samples', '2007/12/10', '2007/12/15');
+insert into promotion values (28974, 'Buy one, Get one', '2021/05/15', '2021/05/25');
+insert into promotion values (24580, 'Cashback Promotions', '2008/11/20', '2008/11/25');
+insert into promotion values (28005, 'Lifestyle Discounts', '2006/02/14', '2006/02/18');
+insert into promotion values (20065, 'Shopping sprees', '2020/09/11', '2020/09/15');
+insert into promotion values (22940, 'Referral Discounts', '2010/07/06', '2010/07/10');
+insert into promotion values (29951, 'BOGO', '2020/10/10', NULL);
+insert into promotion values (28564, 'Birthday Special Offer', '2008/09/14', '2008/09/20');
+insert into promotion values (21002, 'Festive Offers', '2010/12/10', '2010/12/15');
+
+Select * from promotion;
+
+create table department(Dept_id int Primary key,
+Dept_name varchar(20),
+Dept_type varchar(25),
+Dept_manager varchar(45));
+
+insert into department values(101, 'Cleaning', 'Detergent','Leonard Carroll');
+insert into department values(102, 'Food', 'Fruits and Vegetables','Sybill Kane');
+insert into department values(103, 'Drinks', 'Beverages','Ryder Stanton');
+insert into department values(104, 'Food', 'Packed food','Owen Robbins');
+insert into department values(105, 'Food', 'Oil','Tyrone Harvey');
+insert into department values(106, 'Home Appliances', 'Electronics','Tanek Noble');
+insert into department values(107, 'Drinks', 'Dairy','Latifah Erickson');
+insert into department values(108, 'Food', 'Non Veg','Geoffrey Erickson');
+insert into department values(109, 'Home Appliances', 'Bedroom Essential','Galvin Hart');
+insert into department values(110, 'Kids', 'Toys','Nolan Cummings');
+
+select * from department;
+
+create table employee(Emp_id int Primary key,
+First_name varchar(20),
+Last_name varchar(20),
+Dob date,
+Mobile_Number Numeric(10),
+Email_Id varchar(40),
+Address	varchar(50),
+Post varchar(20),
+Salary float(10),
+Dept_id int,
+Foreign Key (Dept_id) REFERENCES department(Dept_id));
+
+Insert into EMPLOYEE  values (21451,'Leonard','Carroll','1990-10-10',9796236021,'l.carroll@gmail.com','Ontario, Ottawa-Carleton, 8484 Nonummy Av.','Department Manager',77680,101);
+Insert into EMPLOYEE  values (21452,'Sybill','Kane', '1992-06-08',9015954137,'s.kane@gmail.com','Ontario, St. Catharines, 5836 Iaculis Avenue.','Department Manager',68870,102);
+Insert into EMPLOYEE  values (21453,'Ryder','Stanton', '2000-06-16',8958242625,'r.stanton@gmail.com','British Columbia, P.O. Box 827, 1825 Fusce Ave.','Department Manager',20000,103);
+Insert into EMPLOYEE  values (21454,'Owen','Robbins','1983-01-23',8039140477,'o.robbins@gmail.com','Quebec, Baie-Comeau, 9376 Imperdiet Street.','Department Manager',47760,104);
+Insert into EMPLOYEE  values (21455,'Tyrone','Harvey','1989-05-06',8074746599,'t.harvey@gmail.com','Quebec, Neuville, Ap #179-5810 Nunc Rd.','Department Manager',60110,105);
+Insert into EMPLOYEE  values (21456,'Tanek','Noble','1983-01-24',9519500942,'t.noble@gmail.com','Manitoba, Daly, 732-9599 Lacinia Rd.','Department Manager',61220,106);
+Insert into EMPLOYEE  values (21457,'Latifah','Erickson','1989-10-23',8579987724,'l.erickson@gmail.com','Ontario, Cornwall, Ap #553-1602 Sit Av.','Department Manager',57890,107);
+Insert into EMPLOYEE  values (21458,'Geoffrey','Erickson','1980-07-21',8854090029,'g.erickson@gmail.com','Quebec, Verdun, P.O. Box 210, 6443 Donec Road.','Department Manager',66070,108);
+Insert into EMPLOYEE  values (21459,'Galvin','Hart','1985-06-01',9408296940,'g.hart@gmail.com','Quebec, Lachine, Ap #379-4986 Odio. Rd.','Department Manager',60100,109);
+Insert into EMPLOYEE  values (21460,'Nolan','Cummings','1995-10-28',8573106712,'n.cummings@gmail.com','Ontario, Vaughan, Ap #642-6556 Adipiscing St.','Department Manager',63020,110);
+Insert into EMPLOYEE  values (21461,'Inga','Gonzales','1986-10-26',9342902187,'i.gonzales@gmail.com','Ontario, Tay, 565-8573 Et Road.','Salesman',62590,101);
+Insert into EMPLOYEE  values (21462,'Orson','Dale','1981-04-01',8127350581,'o.dale@gmail.com','Prince Edward Island, Montague, 5616 Gravida Rd.','Salesman',56880,102);
+Insert into EMPLOYEE  values (21463,'Rahim','Mcdowell','1996-06-06',9570529663,'r.mcdowell@gmail.com','British Columbia, Sooke, 5086 At Avenue.','Salesman',50920,103);
+Insert into EMPLOYEE  values (21464,'Louis','Mcguire','1999-09-08',8865626499,'l.mcguire@gmail.com','Quebec, Montreal, 654-6775 Primis Av.','Salesman',73920,104);
+Insert into EMPLOYEE  values (21465,'Kyra','Bell','1999-07-29',8854779834,'k.bell@gmail.com','Alberta, Wood Buffalo, 271-2092 Enim. Av.','Salesman',31020,105);
+Insert into EMPLOYEE  values (21466,'Kylee','Hebert','1997-02-18',9820149840,'k.hebert@gmail.com','Quebec, Pointe-au-Pic, P.O. Box 331, 348 Ut Rd.','Salesman',35950,106);
+Insert into EMPLOYEE  values (21467,'Cora','Collins','1999-11-05',8310149300,'c.collins@gmail.com','Ontario, Ottawa, 700-385 Augue, Road.','Salesman',61250,107);
+Insert into EMPLOYEE  values (21468,'Mara','Murray','1984-02-04',9133449944,'m.murray@gmail.com','Alberta, Lamont, 7636 Felis, Av.','Salesman',21920,108);
+Insert into EMPLOYEE  values (21469,'Blair','Weeks','1983-04-07',9407806673,'b.weeks@gmail.com','Alberta, Sylvan Lake, 578-8255 Amet Rd.','Salesman',57360,109);
+Insert into EMPLOYEE  values (21470,'Walter','Callahan','1982-04-05',8496323890,'w.callahan@gmail.com','Quebec, Baie-Comeau, 171-701 Semper Street.','Salesman',86320,110);
+Insert into EMPLOYEE  values (21471,'Nevada','Langley','1990-05-07',9031381449,'n.langley@gmail.com','Saskatchewan, Calder, 477-5078 Dolor Street.','Salesman',32900,101);
+Insert into EMPLOYEE  values (21472,'Sasha','Church','1984-03-03',8627672309,'s.church@gmail.com','Nova Scotia, Pugwash, 6574 Ipsum Av.','Salesman',67080,102);
+Insert into EMPLOYEE  values (21473,'Tamekah','Cantu','2001-06-06',8591672124,'t.cantu@gmail.com','Alberta, Westlock, Ap #338-3056 Justo. St.','Salesman',85460,103);
+Insert into EMPLOYEE  values (21474,'Christian','England','1982-10-28',8624449990,'c.england@gmail.com','Ontario, Midlands, 7408 Pharetra Rd.','Salesman',31150,104);
+Insert into EMPLOYEE  values (21475,'Urielle','Humphrey','1986-02-24',8615820180,'u.humphrey@gmail.com','Saskatchewan, Estevan, 4062 Mauris Ave.','Salesman',33050,105);
+Insert into EMPLOYEE  values (21476,'Kendall','Lane','1998-08-22',9037814511,'k.lane@gmail.com','Ontario, Russell, Ap #248-8859 Feugiat. Street.','Salesman',75760,106);
+Insert into EMPLOYEE  values (21477,'Ezra','Randolph','2000-06-28',9012023768,'e.randolph@gmail.com','Quebec, Levis, Ap #612-3420 Montes, Road.','Salesman',63250,107);
+Insert into EMPLOYEE  values (21478,'Ashton','Maddox','1980-01-15',9154493575,'a.maddox@gmail.com','Ontario, Burlington,  6715 Dignissim Ave.','Salesman',50030,108);
+Insert into EMPLOYEE  values (21479,'Sopoline','Spence','1981-01-18',9836288172,'s.spence@gmail.com','Manitoba, Beausejour, 8801 Diam Street.','Salesman',85530,109);
+Insert into EMPLOYEE  values (21480,'Justin','Guerrero','1980-04-15',9169353668,'j.guerrero@gmail.com','Ontario, St. Catharines, Ap #713-8042 Sit Street.','Salesman',66390,110);
+Insert into EMPLOYEE  values (21481,'Finn','Hood','2001-07-06',8963046936,'f.hood@gmail.com','Alberta, Rocky Mountain House, Sagittis Avenue.','Cashier',46510,101);
+Insert into EMPLOYEE  values (21482,'Travis','Savage','1993-09-19',8041247750,'t.savage@gmail.com','Ontario, Quinte West, 527 Tristique Avenue.','Cashier',80040,102);
+Insert into EMPLOYEE  values (21483,'Illana','Gallegos','1997-11-23',8345062655,'i.gallegos@gmail.com','Quebec, Valcourt, 513-8244 Elit, Street.','Cashier',69890,103);
+Insert into EMPLOYEE  values (21484,'Glenna','Dalton','1984-11-11',9940219722,'g.dalton@gmail.com','Manitoba, Flin Flon, 5501 Mauris Rd.','Cashier',79260,104);
+Insert into EMPLOYEE  values (21485,'Ryder','Osborn','1994-10-29',9800340780,'r.osborn@gmail.com','Ontario, St. Catharines, 7765 Hendrerit Ave.','Cashier',71260,105);
+Insert into EMPLOYEE  values (21486,'Jakeem','Velazquez','1980-02-06',9420991281,'j.velazquez@gmail.com','Ontario, Grey County, 274-9821 Consectetuer Road.','Cashier',74950,106);
+Insert into EMPLOYEE  values (21487,'Adria','Fields','1985-11-18',9352920664,'a.fields@gmail.com','Quebec, Dorval, Ap #396-5126 Ut Road.','Cashier',29170,107);
+Insert into EMPLOYEE  values (21488,'Colby','Mathews','1983-01-24',9425912060,'c.mathews@gmail.com','Ontario, Scarborough, 8565 Etiam St.','Cashier',47160,108);
+Insert into EMPLOYEE  values (21489,'Dominic','Fleming','1986-12-27',8122792241,'d.fleming@gmail.com','Quebec, Saint-Georges, Ap #881-9739 In Rd.','Cashier',24840,109);
+Insert into EMPLOYEE  values (21490,'Garrett','Goodwin','1989-02-11',9862308952,'g.goodwin@gmail.com','Quebec, Price, Ap #483-4891 In Ave.','Cashier',21330,110);
+
+select * from employee;
+
+
+create table Product(Product_id int PRIMARY KEY, 
+Product_Name varchar(50), 
+Price int, 
+Expiration_date date, 
+Brand varchar(50), 
+Dept_id int,
+Foreign Key (Dept_id) REFERENCES department(Dept_id));
+
+insert into Product values(1001, 'Surf', 400, '2024/05/10', 'Tide', 101);
+insert into Product values(1002, 'Apple', 200, '2022/08/10', 'Apple', 102);
+insert into Product values(1003, 'Ice tea', 250, '2024/04/10', 'Nestea', 103);
+insert into Product values(1004, 'Water', 40, '2024/06/10', 'Bisleri', 103);
+insert into Product values(1005, 'Biscuits', 100, '2024/05/20', 'Oreo', 104);
+insert into Product values(1006, 'Chocolates', 600, '2024/01/06', 'Cadbury', 104);
+insert into Product values(1007, 'Cooking Oil', 350, '2024/05/25', 'Fortune', 105);
+insert into Product values(1008, 'Nuts', 800, '2024/06/19', 'Ruffles', 104);
+insert into Product values(1009, 'Tv', 40000, NULL, 'LG', 106);
+insert into Product values(1010, 'Milk', 900, '2022/09/10', 'Amul', 107);
+insert into Product values(1011, 'Chicken', 1000, '2022/09/14', 'Criso', 108);
+insert into Product values(1012, 'Sauces', 200, '2022/10/09', 'Kissan', 104);
+insert into Product values(1013, 'Refrigerator', 20000, NULL, 'Samsung', 106);
+insert into Product values(1014, 'Mattrices', 10000, NULL, 'Sleepwell', 109);
+insert into Product values(1015, 'Spreads', 450, '2024/01/20', 'Hartley', 104);
+insert into Product values(1016, 'Blocks', 699, NULL, 'Lego', 110);
+insert into Product values(1017, 'Oranges', 89, '2024/08/15', 'Orange', 102);
+insert into Product values(1018, 'Bed sheets', 675, NULL, 'Signora', 109);
+insert into Product values(1019, 'Dahi', 450, '2024/01/20', 'Amul', 107);
+insert into Product values(1020, 'Barbie', 1199, NULL, 'Disney', 110);
+insert into Product values(1021, 'Tomatoes', 110, '2024/08/20', 'Tomatoes', 102);
+insert into Product values(1022, 'Coca Cola', 120, '2024/01/20', 'Coke', 103);
+insert into Product values(1023, 'Pokemon', 999, NULL, 'Lego', 110);
+insert into Product values(1024, 'Pillow', 460, NULL, 'Sleepware', 109);
+insert into Product values(1025, 'Microwave', 89000, NULL, 'Sony', 106);
+insert into Product values(1026, 'Eggs', 540, '2024/09/29', 'Fresh Farm',108);
+insert into Product values(1027, 'Onions', 600, '2024/08/07', 'Onion', 102);
+insert into Product values(1028, 'Olive Oil', 960, '2024/12/09', 'Jivo', 105);
+insert into Product values(1029, 'Lassi', 550, '2024/07/28', 'Amul', 107);
+insert into Product values(1030, 'Red Bull', 875, '2024/12/31', 'Red Bull', 103);
+insert into Product values(1031, 'Dish Wash', 499, '2024/10/15', 'Vim', 101);
+insert into Product values(1032, 'Mutton', 2500, '2024/08/16', 'Meeto', 108);
+insert into Product values(1033, 'Floor Cleaner', 260, '2024/05/09', 'Lizzole', 101);
+insert into Product values(1034, 'Musturd Oil', 980, '2024/01/04', 'Dalda', 105);
+insert into Product values(1035, 'Football', 3500, NULL, 'Cisco', 110);
+
+select * from product;
+
+create table Customer(Customer_id int PRIMARY KEY,
+First_name varchar(60), 
+Last_name varchar(60), 
+Address varchar(60),
+Mobile_Number Numeric(10),
+Email_Id varchar(30),
+Account_no float, 
+emp_id int, 
+Foreign Key (emp_id) REFERENCES Employee(emp_id), 
+promo_id int, 
+Foreign Key (promo_id) REFERENCES promotion(promo_id));
+
+Insert into CUSTOMER  values (9654601,'Stevie','Bacata','02-West-2635 ',9040065356,'s.bacata@gmail.com',2075659206605520,21481,21075);
+Insert into CUSTOMER  values (9654602,'Adam','Barry','02-West-2018 ',8881624462,'a.barry@gmail.com',6914955698929630,21458,29501);
+Insert into CUSTOMER  values (9654603,'Connor','Betts','02-NorthEast-2347 ',8467532569,'c.betts@gmail.com',6614748217171550,21472,26570);
+Insert into CUSTOMER  values (9654604,'Fred','Binga','03-West-2764 ',9924594048,'f.binga@gmail.com',5835857540921330,21453,28802);
+Insert into CUSTOMER  values (9654605,'Yvette','Biti','02-West-2589 ',8678676623,'y.biti@gmail.com',5819268199442190,21475,22502);
+Insert into CUSTOMER  values (9654606,'Jim','Boller','03-East-2318 ',9029350425,'j.boller@gmail.com',8612931357226350,21486,28645);
+Insert into CUSTOMER  values (9654607,'Charlie','Bui','02-East-2694 ',9725312811,'c.bui@gmail.com',6281165502232590,21451,25589);
+Insert into CUSTOMER  values (9654608,'Barbara','Carlton','02-West-2699 ',8137228969,'b.carlton@gmail.com',7022629833077940,21487,26940);
+Insert into CUSTOMER  values (9654609,'Joe','Carol','01-East-2321 ',9200881237,'j.carol@gmail.com',4547489843276770,21474,23654);
+Insert into CUSTOMER  values (9654610,'Jim','Chaffee','03-West-2432 ',9070890842,'j.chaffee@gmail.com',8096514956281900,21466,28456);
+Insert into CUSTOMER  values (9654611,'Samantha','Chairs','02-West-2962 ',8991945627,'s.chairs@gmail.com',5622427465167390,21455,28260);
+Insert into CUSTOMER  values (9654612,'Uma','Chaudri','03-East-2134 ',9138744906,'u.chaudri@gmail.com',5536797887344680,21476,26977);
+Insert into CUSTOMER  values (9654613,'Elizabeth','Chu','01-West-2425 ',9854709252,'e.chu@gmail.com',1736877796975500,21464,28974);
+Insert into CUSTOMER  values (9654614,'Eric','Chung','03-West-2796 ',8799370983,'e.chung@gmail.com',8930432475891800,21451,24580);
+Insert into CUSTOMER  values (9654615,'Anna','Clark','03-West-2601 ',8417801962,'a.clark@gmail.com',6803713443982470,21481,28005);
+Insert into CUSTOMER  values (9654616,'Elizabeth','Clark','02-NorthEast-2414 ',8471458063,'e.clark@gmail.com',7170807900086560,21485,20065);
+Insert into CUSTOMER  values (9654617,'Sabrina','Cole','02-West-2537 ',8239211078,'s.cole@gmail.com',7817220262855980,21478,22940);
+Insert into CUSTOMER  values (9654618,'Janet','Comuntzis','02-West-2286 ',8361753596,'j.comuntzis@gmail.com',8933912640612020,21483,29951);
+Insert into CUSTOMER  values (9654619,'Bob','Decker','01-East-2086 ',8941457574,'b.decker@gmail.com',3285845481848750,21471,28564);
+Insert into CUSTOMER  values (9654620,'Tina','Desiato','01-East-2358 ',9256461011,'t.desiato@gmail.com',5497253698845480,21459,21002);
+Insert into CUSTOMER  values (9654621,'Alexandra','Donnell','03-West-2082 ',9364825561,'a.donnell@gmail.com',7315907888695420,21490,28564);
+Insert into CUSTOMER  values (9654622,'Mark','Ellis','03-NorthEast-2482 ',9093217251,'m.ellis@gmail.com',8069932015018130,21455,28564);
+Insert into CUSTOMER  values (9654623,'Nicholas','Fernandes','02-East-2372 ',9768910058,'n.fernandes@gmail.com',2624945749548720,21456,21075);
+Insert into CUSTOMER  values (9654624,'Mary','Ferris','03-East-2392 ',8296892662,'m.ferris@gmail.com',5085790459175570,21470,29501);
+Insert into CUSTOMER  values (9654625,'Susan','Filosa','02-West-2279 ',9015120227,'s.filosa@gmail.com',3081715772484640,21468,26570);
+Insert into CUSTOMER  values (9654626,'Daniel','Flanders','02-East-2639 ',8941376155,'d.flanders@gmail.com',1558346506369200,21456,28802);
+Insert into CUSTOMER  values (9654627,'Leighton','Forrest','02-East-2284 ',9760472397,'l.forrest@gmail.com',2179970546979110,21478,22502);
+Insert into CUSTOMER  values (9654628,'Phoebe','Gour','02-East-2910 ',9078126386,'p.gour@gmail.com',4920041409726420,21461,28645);
+Insert into CUSTOMER  values (9654629,'Mihael','Khan','02-NorthEast-2294 ',9278033726,'m.khan@gmail.com',7849219700163850,21468,28564);
+Insert into CUSTOMER  values (9654630,'Sean','Sanders','03-West-2765 ',9530134987,'s.sanders@gmail.com',5672327549795080,21461,28564);
+Insert into CUSTOMER  values (9654631,'Preston','Senome','02-East-2260 ',9815809099,'p.senome@gmail.com',9601532059792550,21468,23654);
+Insert into CUSTOMER  values (9654632,'Natasha','Song','02-East-2578 ',8434213205,'n.song@gmail.com',3335561979667820,21466,28456);
+Insert into CUSTOMER  values (9654633,'Radhya','Staples','02-East-2654 ',9781030122,'r.staples@gmail.com',5155588022217380,21453,28260);
+Insert into CUSTOMER  values (9654634,'Mei','Wang','01-West-2783 ',9565826498,'m.wang@gmail.com',9362169516969600,21466,26977);
+Insert into CUSTOMER  values (9654635,'Aanya','Zhang','02-East-2793 ',9425949937,'a.zhang@gmail.com',7746393349082340,21482,28974);
+Insert into CUSTOMER  values (9654636,'Ashmita','Choudhary','02-West-2635 ',9658462057,'a.choudhary@gmail.com',8183709561519670,21490,24580);
+Insert into CUSTOMER  values (9654637,'Pushti','Sharma','02-West-2018 ',8930544390,'p.sharma@gmail.com',2433433124868030,21457,28005);
+Insert into CUSTOMER  values (9654638,'Arshita','Srivastav','02-NorthEast-2347 ',8742868330,'a.srivastav@gmail.com',3949425118111190,21488,20065);
+Insert into CUSTOMER  values (9654639,'Anubhav','Thakkar','03-West-2764 ',8196150015,'a.thakkar@gmail.com',2004670527738170,21471,22940);
+Insert into CUSTOMER  values (9654640,'Rohan','Khanna','02-West-2635 ',8096266294,'r.khanna@gmail.com',4536040101471560,21460,29951);
+
+select * from customer;
+
+Create table orders(
+Order_Id int,
+Customer_Id int,
+Units int,
+Foreign Key (Customer_Id) REFERENCES Customer(Customer_Id));
+
+Insert into ORDERS values (1,9654638,38);
+Insert into ORDERS values (2,9654613,43);
+Insert into ORDERS values (3,9654601,31);
+Insert into ORDERS values (4,9654635,6);
+Insert into ORDERS values (5,9654617,36);
+Insert into ORDERS values (6,9654626,1);
+Insert into ORDERS values (7,9654623,17);
+Insert into ORDERS values (8,9654620,36);
+Insert into ORDERS values (9,9654634,44);
+Insert into ORDERS values (10,9654620,14);
+Insert into ORDERS values (11,9654605,36);
+Insert into ORDERS values (12,9654606,8);
+Insert into ORDERS values (13,9654620,30);
+Insert into ORDERS values (14,9654624,39);
+Insert into ORDERS values (15,9654622,9);
+Insert into ORDERS values (16,9654619,16);
+Insert into ORDERS values (17,9654632,2);
+Insert into ORDERS values (18,9654640,19);
+Insert into ORDERS values (19,9654640,22);
+Insert into ORDERS values (20,9654639,26);
+Insert into ORDERS values (21,9654633,22);
+Insert into ORDERS values (22,9654625,38);
+Insert into ORDERS values (23,9654629,39);
+Insert into ORDERS values (24,9654605,9);
+Insert into ORDERS values (25,9654639,7);
+Insert into ORDERS values (26,9654609,9);
+Insert into ORDERS values (27,9654617,47);
+Insert into ORDERS values (28,9654626,36);
+Insert into ORDERS values (29,9654601,5);
+Insert into ORDERS values (30,9654612,9);
+Insert into ORDERS values (31,9654602,21);
+Insert into ORDERS values (32,9654611,31);
+Insert into ORDERS values (33,9654606,12);
+Insert into ORDERS values (34,9654621,2);
+Insert into ORDERS values (35,9654635,12);
+Insert into ORDERS values (36,9654615,43);
+Insert into ORDERS values (37,9654605,30);
+Insert into ORDERS values (38,9654608,48);
+Insert into ORDERS values (39,9654630,18);
+Insert into ORDERS values (40,9654636,16);
+
+select * from Orders;
